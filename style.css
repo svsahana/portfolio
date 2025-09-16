@@ -23,12 +23,15 @@ body {
 
 header {
   background-color: var(--card);
-  padding: 1rem 2rem;
+  padding: 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 header h1 {
@@ -60,7 +63,25 @@ nav ul li a:hover {
   text-align: center;
   padding: 1rem 1rem;
 }
+.hero-buttons button{
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: none;
+  background-color: #2186fa;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
 
+}
+.hero-buttons button a{
+color: #ffffff;
+text-decoration: none;
+}
+.hero-buttons button :hover{
+  cursor: pointer;}
+.hero-buttons button:hover{
+  background-color: #71aff7fa;
+}
 .hero h2 {
   font-size: 2rem;
   color: var(--accent);
@@ -68,7 +89,7 @@ nav ul li a:hover {
 
 .hero p {
   font-size: 1.1rem;
-  color: #8b949e;
+  color: #e6e9ed;
 }
 
 .section {
@@ -127,7 +148,6 @@ h2 {
   height: 200px;
   object-fit: cover;
   border-radius: 50%;
-  border: 3px solid var(--accent);
   box-shadow: 0 0 10px var(--accent);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -136,6 +156,7 @@ h2 {
   transform: scale(1.05);
   box-shadow: 0 0 30px rgba(88, 166, 255, 0.9)
 }
+
 
 .certs {
   list-style: none;
@@ -149,22 +170,7 @@ h2 {
   font-weight: 600;
 }
 
-.contact-icons {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-}
 
-.contact-icons img {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-  transition: transform 0.3s;
-}
-
-.contact-icons img:hover {
-  transform: scale(1.2);
-}
 
 footer {
   text-align: center;
@@ -173,7 +179,60 @@ footer {
   font-size: 0.9rem;
   color: #8b949e;
 }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+
+  
+ 
   @media (max-width: 768px) {
+    
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #333;  
+    position: absolute;
+    top: 60px;               
+    left: 0;
+    padding: 10px 0;
+  }
+
+  #nav-links.active {
+    display: flex;
+  }
+
+  #nav-links li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  #menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 28px;
+    color: #fff;  
+  }
+}
   header {
     flex-direction: column;
     text-align: center;
@@ -200,7 +259,7 @@ footer {
   header h1 {
     font-size: 2.5rem;
   }
-}
+
 
 @media (max-width: 480px) {
   .container {
